@@ -1,8 +1,4 @@
 package main
-/*
-此程序用于在内网server端构造端口映射（AddPortMapping），并监听TCP端口，等待外网client发送消息，然后打印该消息
-（注意不同主机需修改ip地址和端口号）
-*/
 import (
 	"fmt"
 	"os"
@@ -22,7 +18,6 @@ func main() {
 	 Example_WANIPConnection_GetExternalIPAddress()
 }
 
-// Use discovered WANIPConnection services to find external IP addresses.
 func Example_WANIPConnection_GetExternalIPAddress() {
 	clients, errors, err := internetgateway1.NewWANIPConnection1Clients()
 	extIPClients := make([]GetExternalIPAddresser, len(clients))
@@ -111,8 +106,7 @@ server := "192.168.1.20:5001"
         os.Exit(1)
     }
     Log("Waiting for Client ...")
-    for{
-       fmt.Println("conn 1")
+    for{ 
         conn, err := netListen.Accept()   
         if err != nil{
             Log(conn.RemoteAddr().String(), "Fatal error: ", err)
