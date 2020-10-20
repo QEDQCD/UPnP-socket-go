@@ -1,1 +1,0 @@
-example程序用于在内网server端构造端口映射（AddPortMapping），testsocket函数监听TCP端口，等待外网client发送消息，然后打印该消息
